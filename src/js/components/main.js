@@ -1,12 +1,12 @@
 import React ,{Component} from "react";
 import {connect} from "react-redux";
 import {bindActionCreators} from "redux";
-import {addtodo} from '../actions';
+import {addtodo} from "../actions";
 class Main extends Component{
     showtodos(){
         return this.props.todos.map((todo)=>{
             return (
-                <tr><td>Todos</td><td key={todo.id}>{todo.todo}</td></tr>
+                <tr><td>Todos</td><td>{todo.todo}</td></tr>
             )
         })
     }
@@ -29,13 +29,14 @@ class Main extends Component{
     }
 }
 function mapStateToProps(state){
-   console.log(state);
-   
+  console.log(state);
+  
     return {
-        todos:state.showtodos
+        todos:state.addtodo
     }
 }
 function matchDispatchToProps(dispatch){
     return bindActionCreators({addtodo:addtodo},dispatch);
 }
+
 export default connect(mapStateToProps,matchDispatchToProps)(Main);

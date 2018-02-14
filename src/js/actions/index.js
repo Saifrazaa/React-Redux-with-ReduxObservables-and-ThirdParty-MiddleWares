@@ -1,13 +1,12 @@
+
 export const addtodo=()=>{
-   var value=document.getElementById('add').value;
-   var object={
-       "todo":value
-   }
-   console.log(object);
-   
+    var value=document.getElementById('add').value;
+    var object={
+        "todo":value
+    }
     
-   return {
-       type:"Add_TODO",
-       payload:object
-   }
-}
+    return {
+        type:"ADD_TODO",
+        payload:object
+    }
+ }
