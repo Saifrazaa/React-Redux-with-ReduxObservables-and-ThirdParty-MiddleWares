@@ -1,10 +1,9 @@
 
-export const addtodo=()=>{
-    var value=document.getElementById('add').value;
-    var object={
-        "todo":value
-    }
-    
+export const addtodo=(todovalue)=>{
+   console.log(todovalue);
+   var object={
+       todo:todovalue
+   }
     return {
         type:"ADD_TODO",
         payload:object

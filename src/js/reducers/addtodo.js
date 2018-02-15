@@ -1,22 +1,21 @@
 import React from "react";
 import {combineReducers} from "redux";
-var newstate=[];
-var addtodos= function(state=newstate,action){
+
+
+var addtodos= function(state=[],action){
     switch(action.type){
         case "ADD_TODO":
-        newstate.push(action.payload);
-        console.log(newstate);
-        
-        break;
+        return [
+            ...state,
+            action.payload
+        ]
         default:
-        return state;
-        
+            return state;   
     }
-    return state;
-    
+    // return state;
 }
-console.log(newstate);
+
 var allreducers=combineReducers({
-   addtodo:addtodos
+    addtodo:addtodos
 })
 export default allreducers;
