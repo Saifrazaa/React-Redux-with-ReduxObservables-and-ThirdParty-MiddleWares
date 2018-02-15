@@ -1,12 +1,15 @@
-import React ,{Component} from "react";
+import React from "react";
 import ReactDom from "react-dom";
-import {createStore} from "redux";
+//importing components and third party functions
+import {createStore, applyMiddleware,combineReducers} from "redux";
+import logger from "redux-logger";
 import {Provider} from "react-redux";
-import Main from "./components/main";
-import allreducer from "./reducers/addtodo";
-var store=createStore(allreducer);
+import store from "./store.js";
+import App from "./components/app";
 ReactDom.render(
     <Provider store={store}>
-        <Main />
+        <App />
     </Provider>
-    ,document.getElementById('root'));
+    ,
+    document.getElementById('root')
+)
