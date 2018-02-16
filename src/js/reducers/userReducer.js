@@ -2,7 +2,7 @@ const user=(state={
     username:"saifraza",age:20
     },action)=>{
         switch(action.type){
-            case "SET_USER_DETAILS":
+            case "SET_USER_DETAILS_FULFILLED":
             state={
                 ...state,
                 username:action.payload.username,
