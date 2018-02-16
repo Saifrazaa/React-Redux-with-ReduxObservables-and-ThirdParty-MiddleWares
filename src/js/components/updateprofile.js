@@ -1,6 +1,7 @@
 import React,{Component} from "react";
 import {connect} from "react-redux";
 import {bindActionCreators} from "redux";
+import {update} from "../actions/updateProfile";
 class UpdateProfile extends Component{
     constructor(props){
         super(props);
@@ -11,12 +12,12 @@ class UpdateProfile extends Component{
     }
     usernamechange(event){
         this.setState({username:event.target.value});
-       console.log(this.state.username);
+      
        
      }
     agechange(event){
         this.setState({age:event.target.value});
-        console.log(this.state.age);
+       
         
     }
 
@@ -30,7 +31,7 @@ class UpdateProfile extends Component{
                 <span className="text text-danger">Currently is :{this.state.age}</span>
            
                 <br />
-                <button style={{marginTop:"30px"}} onClick={this.props.update} className="btn btn-danger">Update</button>
+                <button style={{marginTop:"30px"}} onClick={()=>this.props.update(this.state.username,this.state.age)} className="btn btn-danger">Update</button>
             </div>
         )
     }
@@ -46,4 +47,4 @@ function matchDispatchToProps(dispatch){
         update:update
     },dispatch)
 }
-export default connect(mapStateToProps)(UpdateProfile);
+export default connect(mapStateToProps,matchDispatchToProps)(UpdateProfile);

@@ -2,10 +2,11 @@ const user=(state={
     username:"saifraza",age:20
     },action)=>{
         switch(action.type){
-            case "SET_NAME":
+            case "SET_USER_DETAILS":
             state={
                 ...state,
-                username:action.payload
+                username:action.payload.username,
+                age     :action.payload.age
             }
             break;
             case "SET_AGE":

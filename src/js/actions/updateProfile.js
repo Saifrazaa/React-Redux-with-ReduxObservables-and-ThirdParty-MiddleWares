@@ -1,5 +1,6 @@
-export const update=(username)=>{
-    return {
-        type:"SET_AGE"
-    }
+export const update=(username,age)=>{
+ return {
+     type:"SET_USER_DETAILS",
+     payload:{username:username,age:age}
+ }
 }
